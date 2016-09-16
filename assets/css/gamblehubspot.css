@@ -273,11 +273,11 @@ footer{
 }
 .btn-default:hover{
 	background: #ffc73a;
-	color: #f34562;
+	color: #403833;
 	border: 2px solid #ffc73a;
 }
 .btn-default:hover a{
-	color: #f34562;
+	color: #403833;
 }
 .btn-default a{
 	margin: 0;
