@@ -271,12 +271,12 @@ footer{
 	color: #ffc73a;
 	margin: 10px 10px 0 0;
 }
-.btn-default:hover{
+.btn-default:hover, .btn-default:focus{
 	background: #ffc73a;
 	color: #403833;
 	border: 2px solid #ffc73a;
 }
-.btn-default:hover a{
+.btn-default:hover a, .btn-default:focus a{
 	color: #403833;
 }
 .btn-default a{
