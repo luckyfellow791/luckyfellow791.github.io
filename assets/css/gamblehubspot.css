@@ -222,6 +222,69 @@ footer{
 	display: none;
 }
 
+#referral .ref-content, .referral-content{
+	background: #894098;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 30px;
+    margin-top: 15px;
+}
+
+#referral .ref-content .text, .referral-content{
+	color:#fff;
+	font-size: 16px;
+	line-height: 18px;
+	text-align: left;
+}
+
+#referral .ref-content .text h2, .referral-content h2{
+	color:#ffc73a;
+	font-size: 25px;
+	line-height: 24px;
+	font-weight: 900;
+	display: inline-block;
+	width: 100%;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+#referral .ref-content .text .help-text{
+	font-size: 13px;
+	font-style: italic;
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0 20px;
+}
+#referral .ref-content .text .help-text strong{
+	color:#ffc73a;
+}
+
+.referral-content a{
+	color:#ffc73a;
+	display: inline-block;
+}
+
+.btn-default{
+	background: none;
+	border: 2px solid #ffc73a;
+	text-decoration: none;
+	color: #ffc73a;
+	margin: 10px 10px 0 0;
+}
+.btn-default:hover{
+	background: #ffc73a;
+	color: #f34562;
+	border: 2px solid #ffc73a;
+}
+.btn-default:hover a{
+	color: #f34562;
+}
+.btn-default a{
+	margin: 0;
+	color: #ffc73a;
+	text-decoration: none;
+}
+
 
 @media (min-width: 992px){
 	.hero-form .register-form form .btn-container .btn-primary{

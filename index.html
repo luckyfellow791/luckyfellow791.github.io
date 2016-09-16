@@ -7,6 +7,14 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Gamble Hub Spot.com || A great chance to win upto 1 crore</title>
 
+        <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="http://gamblehubspot.com/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Gamble Hub Spot.com" />
+    <meta property="og:description"   content="A great chance to win upto 1 crore legally" />
+    <meta property="og:image"         content="http://gamblehubspot.com/public/refer.jpg" />
+
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap -->
@@ -52,10 +60,26 @@
                           <label for="Name">Full Name<span class="text-danger">*<span></label>
                           <input autofocus="true" required="true" type="text" class="form-control" id="Name" name="Name">
                         </fieldset>
-                        <fieldset class="form-group">
-                          <label for="Age">Age</label>
-                          <input type="text" class="form-control" id="Age" name="Age" >
-                        </fieldset>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <fieldset class="form-group">
+                              <label for="Age">Age</label>
+                              <input type="text" class="form-control" id="Age" name="Age" >
+                            </fieldset>
+                          </div>
+                          <div class="col-md-6">
+                            <fieldset class="form-group">
+                              <label for="Sex">Sex</label>
+                              <select class="form-control" id="Sex" name="Sex">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Transgender</option>
+                              </select>
+                            </fieldset>
+                          </div>
+                        </div>
+                        
                         <fieldset class="form-group">
                           <label for="Location">Location<span class="text-danger">*<span></label>
                           <input class="form-control" required="true" type="text" id="Location" name="Location" >
@@ -66,21 +90,19 @@
                     </div>
                     <div class="col-md-6">
                         <fieldset class="form-group">
-                          <label for="email">Email address<span class="text-danger">*<span></label>
+                          <label for="email">Email<span class="text-danger">*<span></label>
                           <input type="email" class="form-control" required="true" id="email" name="email">
-                          <span id="email-invalid" style="visibility:hidden">Must be a valid email address</span>
+                          <span id="email-invalid" style="visibility:hidden">Must be a valid email</span>
                         </fieldset>
-                        <fieldset class="form-group">
-                          <label for="Sex">Sex</label>
-                          <select class="form-control" id="Sex" name="Sex">
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Transgender</option>
-                          </select>
-                        </fieldset>
+                        
                         <fieldset class="form-group">
                           <label for="PhoneNumber">Phone Number<span class="text-danger">*<span></label>
                           <input class="form-control" type="number" required="true" id="PhoneNumber" name="PhoneNumber">
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                          <label for="Referral">Referral Email (If any)</label>
+                          <input class="form-control" type="email" id="Referral" name="Referral">
                         </fieldset>
 
                         <fieldset class="btn-container">
@@ -97,7 +119,19 @@
                       <p>We’ll notify you via email<br/>
                       when we begin the contest</p>
 
-                      <p>Then You can <strong class="text-danger">BUY</strong> ticket and enter the contest</p>
+                      <div class="referral-content">
+                        Refer a Friend
+                        <h2>Get a free ticket</h2>
+                        for each referral after you buy 1<br/>
+
+                        <!-- Your share button code -->
+                        <div class="fb-share-button btn btn-default" 
+                          data-href="http://gamblehubspot.com/" data-layout="button" data-size="small" data-mobile-iframe="false">
+                          <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgamblehubspot.com%2F&amp;src=sdkpreparse">Share on FaceBook</a>
+                        </div>
+
+                        <a class="btn btn-default" href="#referral">Click here for more info</a>
+                      </div>
                   </div>
 
                 </div>
@@ -125,9 +159,47 @@
             <span>2nd Price</span>
             <h2>Rs.35,00,000</h2>
           </div>
-
-          <hr/>
         </div>
+      </div>
+    </section>
+
+    <section id="referral">
+      <div class="container text-center">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row ref-content">
+            <div class="col-md-6">
+              <img src="assets/images/referral.png" class="img-responsive" alt="Refer a Friend Get a free ticket for each referral "/>
+            </div>
+            <div class="col-md-6 text">
+              Refer a Friend
+              <h2>Get a free ticket</h2>
+              for each referral after you buy 1
+
+              <span class="help-text">(Ex: Lets assume you refer 10 people.<br/>
+              After you buy 1 ticket You’ll get 1+10=<strong>11</strong> Tickets)</span>
+
+              This will increase your chance for win.
+
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=343119449176997";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+
+                <!-- Your share button code -->
+              <div class="fb-share-button btn btn-default" 
+                data-href="http://gamblehubspot.com/" data-layout="button" data-size="small" data-mobile-iframe="false">
+                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgamblehubspot.com%2F&amp;src=sdkpreparse">Share on FaceBook</a>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        
       </div>
     </section>
 
