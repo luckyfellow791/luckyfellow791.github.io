@@ -1,0 +1,112 @@
+/*********************************
+.credit { Custom Web Page Design }
+.credit { Created by Daddy Design }
+.credit { http://www.daddydesign.com }
+.credit { COPYRIGHT NOTICE - ALL CODE AND IMAGES ARE COPYRIGHTED DO NOT TRY TO STEAL THIS! }
+.credit { All Rights Reserved. }
+*********************************/
+
+* {
+	margin:0; 
+	padding:0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #FF6600;
+	overflow: hidden;
+	text-align: center;
+}
+
+img {
+	border: 0;
+	outline: none;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 520px;
+}
+
+.top {
+	float: left;
+	height: 200px;
+	margin: 47px 20px 0 20px;
+	width: 480px;
+}
+
+.body {
+	background: #FFFFFF;
+	behavior: url(border-radius.htc);
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	float: left;
+	margin: 0 20px;
+	padding: 50px 50px 20px 50px;
+	width: 380px;
+}
+
+#button {
+			text-align: center;
+		}
+	#button a {
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffab00), to(#e05d05));
+		background: -moz-linear-gradient(top, #ffab00, #e05d05);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffab00, endColorstr=#e05d05);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffab00, endColorstr=#e05d05)";
+		background-color: #e05d05;
+		behavior: url(border-radius.htc);
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		color: #FFFFFF;
+		display: block;
+		font: bold 22px/22px Helvetica, Arial, sans-serif;
+		margin: 0px;
+		padding: 15px 0 10px 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: 380px;
+	}
+	#button a:hover {
+		background: #ffab00;
+	}
+	
+.goback {
+	display: block;
+	margin: 42px 0 0 0;
+	text-align: right;
+}
+	.goback p {
+		font: 11px/14px Arial, Helvetica, sans-serif;
+	}
+	.goback a {
+		color: #CCCCCC;
+		text-decoration: none;
+	}
+	.goback a:hover {
+		color: #666666;
+		text-decoration: underline;
+	}
+
+.footer {
+	float: left;
+	padding: 15px 0 15px 16px;
+	text-align: center;
+	width: 504px;
+}
+	.footer p {
+		color: #B24A03;
+		font: 11px/11px Arial, Helvetica, sans-serif;
+	}
+	.footer a {
+		color: #B24A03;
+		text-decoration: none;
+	}
