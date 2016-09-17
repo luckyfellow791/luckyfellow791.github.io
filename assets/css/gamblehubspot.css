@@ -78,13 +78,22 @@ h3{
 .hero-form .register-form form .btn-container{
 	margin: 0 0 -95px 0;
 }
-.hero-form .register-form form .btn-container .btn-primary{
-	font-size: 20px;
+.btn{
+	border-radius: 50em;
+	-webkit-border-radius: 50em;
+}
+.btn-primary{
 	font-weight: bold;
 	text-transform: uppercase;
 	background: #894098;
 	border: none;
-    padding: 28px 12px;
+}
+.btn-large{
+	padding: 15px;
+    font-size: 20px;
+}
+.hero-form .register-form form .btn-container .btn-primary{
+    
     box-shadow: inset 0 -6px 0px rgba(0,0,0,.15);
     -webkit-box-shadow: inset 0 -6px 0px rgba(0,0,0,.15);
     border: 10px solid #fff;
@@ -222,6 +231,10 @@ footer{
 	display: none;
 }
 
+#referral .ref-content{
+	margin-bottom: 50px;
+}
+
 #referral .ref-content, .referral-content{
 	background: #894098;
 	border-radius: 5px;
@@ -275,7 +288,7 @@ footer{
 	color: #ffc73a;
 	margin: 10px 10px 0 0;
 }
-.btn-default:hover, .btn-default:focus{
+.btn-default:hover, .btn-default.active{
 	background: #ffc73a;
 	color: #403833;
 	border: 2px solid #ffc73a;
@@ -287,6 +300,27 @@ footer{
 	margin: 0;
 	color: #ffc73a;
 	text-decoration: none;
+}
+
+.lottery-numbers{
+	display: inline-block;
+	width: 100%;
+    margin-bottom: 10px;
+}
+
+.lottery-numbers button{
+	margin: 1%;
+	min-width: 8%;
+	float: left;
+}
+
+.lottery-selected-num{
+	font-size: 30px;
+    font-weight: bold;
+}
+.lottery-selected-num span{
+    color: #f34562;
+    margin: 0 10px 0;
 }
 
 
