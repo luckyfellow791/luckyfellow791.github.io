@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    // lottery-selected-num
+    var tickets = [];
+    $('.lottery-numbers button').click(function(){
+	$(this).toggleClass('active');
+
+	var content = $(this).text();
+        tickets.push(content);
+	$('.lottery-selected-num span:first-child').text(content);
+        console.log(tickets);
+    });
+});
