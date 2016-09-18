@@ -142,7 +142,7 @@ jQuery(document).ready(function($){
 	//replace productId, productName, price and url with your real product info
 	productId = productId + 1;
         var ticketName = getTicketName(tickets);
-	var productAdded = $('<li class="product"><div class="product-image"><a href="#0"><img src="img/product-preview.png" alt="placeholder"></a></div><div class="product-details"><h3><a href="#0">' + ticketName + '</a></h3><span class="price">$25.99</span><div class="actions"><a href="#0" class="delete-item">Delete</a><div class="quantity"><label for="cd-product-'+ productId +'">Qty</label><span class="select"><select id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></span></div></div></div></li>');
+	var productAdded = $('<li class="product"><div class="product-details"><h3><a href="#0">' + ticketName + '</a></h3><div class="actions"><a href="#0" class="delete-item">Delete</a></div><span class="priceDef"><span class="tit">Lottery Price</span> <span class="val">Rs.100.00</span> <span class="tit">Convenience charges</span> <span class="val">Rs.5.00</span></span><span class="price">Rs.105.00</span><div class="actions" style="display:none;"><div class="quantity"><label for="cd-product-'+ productId +'">Qty</label><span class="select"><select id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option></select></span></div></div></div></li>');
 	cartList.prepend(productAdded);
     }
 
@@ -152,7 +152,7 @@ jQuery(document).ready(function($){
 	
 	var topPosition = product.offset().top - cartBody.children('ul').offset().top ,
 	    productQuantity = Number(product.find('.quantity').find('select').val()),
-	    productTotPrice = Number(product.find('.price').text().replace('$', '')) * productQuantity;
+	    productTotPrice = Number(product.find('.price').text().replace('Rs.', '')) * productQuantity;
 	
 	product.css('top', topPosition+'px').addClass('deleted');
 
@@ -175,7 +175,7 @@ jQuery(document).ready(function($){
 	cartList.children('li:not(.deleted)').each(function(){
 	    var singleQuantity = Number($(this).find('select').val());
 	    quantity = quantity + singleQuantity;
-	    price = price + singleQuantity*Number($(this).find('.price').text().replace('$', ''));
+	    price = price + singleQuantity*Number($(this).find('.price').text().replace('Rs', ''));
 	});
 
 	cartTotal.text(price.toFixed(2));

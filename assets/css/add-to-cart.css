@@ -458,7 +458,7 @@ Main Components
   display: block;
 }
 .cd-cart h3, .cd-cart .price {
-  font-weight: bold;
+  font-weight: 900;
 }
 .cd-cart h3 {
   width: 70%;
@@ -479,20 +479,38 @@ Main Components
   float: right;
   width: 30%;
   text-align: right;
-  margin: 0 0 10px;
+  margin: 10px 0;
 }
 .cd-cart .actions {
   font-size: 1.4rem;
   height: 1.6em;
   line-height: 1.6em;
+  float: right;
+  margin-bottom: 5px;
+  width: 30%;
+  text-align: right;
 }
 .cd-cart .actions::after {
   clear: both;
   content: "";
   display: block;
 }
-.cd-cart .delete-item, .cd-cart .quantity {
+.cd-cart .priceDef{
+  display: inline-block;
+  width: 100%;
+}
+.cd-cart .priceDef .tit{
+  display: inline-block;
+  width: 70%;
   float: left;
+}
+.cd-cart .priceDef .val{
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+}
+.cd-cart .delete-item, .cd-cart .quantity {
+  /*float: left;*/
   color: #808b97;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -501,7 +519,7 @@ Main Components
   display: none;
 }
 .cd-cart .delete-item {
-  margin-right: 1em;
+  /*margin-right: 1em;*/
 }
 .cd-cart .delete-item:hover {
   color: #e94b35;
