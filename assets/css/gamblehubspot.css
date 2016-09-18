@@ -324,6 +324,15 @@ footer{
     margin: 0 10px 0;
 }
 
+.thankYou h1{
+    font-size: 45px;
+    color: #f34562;
+    margin-bottom: 10px;
+}
+.thankYou p{
+	margin-bottom: 45px;
+}
+
 
 @media (min-width: 992px){
 	.hero-form .register-form form .btn-container .btn-primary{
