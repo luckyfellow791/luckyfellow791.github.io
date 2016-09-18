@@ -5,6 +5,67 @@ jQuery(document).ready(function($){
     var productId = 0;
     var products = [];
 
+    var id = "instamojo";
+    var buyLink = $('#instamojo');
+    var baseUrl = "https://www.instamojo.com/gamblehubspot/ticket-0d583/?intent=buy&data_Field_78960=";
+
+    function validateTickets(tickets) {
+        return tickets.length === 5;
+    }
+
+    function getTicketName(tickets) {
+        return tickets.reduce(function(acc, elem) {
+            return acc + "-" + elem;
+        });
+    }
+
+    buyLink.on('click', function(event) {
+        var validTicket = validateTickets(tickets);
+        if (validTicket === false) {
+            alert("You have to pick 5 numbers in the lottery.");
+            return;
+        }
+        var checkoutLink = document.getElementById(id);
+        var ticketNo = getTicketName(tickets);
+        var redirectUrl = baseUrl + ticketNo;
+        window.location = redirectUrl;
+    });
+
+    $('.lottery-numbers button').click(function(){
+	$(this).toggleClass('active');
+	var content = $(this).text();
+        var ticketIndex = tickets.indexOf(content);
+        console.log(ticketIndex, content, tickets);
+        if (ticketIndex > -1) {
+            // ticket is already selected
+            tickets.splice(ticketIndex, 1);
+            console.log('b4 tickets', tickets);
+            for (var i =0; i<5; i++) {
+                console.log('jifa', tickets, i, tickets[i]);
+                var childAccessor = listoChild(i + 1);
+                if (tickets[i] === undefined) {
+                    console.log('accc', childAccessor);
+                    $('.lottery-selected-num span:' + childAccessor).text('--');    
+                }                
+                else {
+                    $('.lottery-selected-num span:' + childAccessor).text(tickets[i]);   
+                }
+            }
+            return;
+        }
+        if (tickets.length >= 5) {
+            alert("You can pick only 5 numbers");
+            return;
+        }
+        if (ticketIndex === -1) {
+            tickets.push(content);
+            var childAccessor = listoChild(tickets.length);
+	    $('.lottery-selected-num span:' + childAccessor).text(content);
+        }
+        
+        console.log(tickets);
+    });
+
     if( cartWrapper.length > 0 ) {
 	//store jQuery objects
 	var cartBody = cartWrapper.find('.body');
@@ -103,51 +164,6 @@ jQuery(document).ready(function($){
 
     function isInArray(value, array) {
         return array.indexOf(value) > -1;
-    }
-
-    function getTicketName(tickets) {
-        return tickets.reduce(function(acc, elem) {
-            return acc + "-" + elem;
-        });
-    }
-
-    $('.lottery-numbers button').click(function(){
-	$(this).toggleClass('active');
-	var content = $(this).text();
-        var ticketIndex = tickets.indexOf(content);
-        console.log(ticketIndex, content, tickets);
-        if (ticketIndex > -1) {
-            // ticket is already selected
-            tickets.splice(ticketIndex, 1);
-            console.log('b4 tickets', tickets);
-            for (var i =0; i<5; i++) {
-                console.log('jifa', tickets, i, tickets[i]);
-                var childAccessor = listoChild(i + 1);
-                if (tickets[i] === undefined) {
-                    console.log('accc', childAccessor);
-                    $('.lottery-selected-num span:' + childAccessor).text('--');    
-                }                
-                else {
-                    $('.lottery-selected-num span:' + childAccessor).text(tickets[i]);   
-                }
-            }
-            return;
-        }
-        if (tickets.length >= 5) {
-            alert("You can pick only 5 numbers");
-            return;
-        }
-        if (ticketIndex === -1) {
-            tickets.push(content);
-            var childAccessor = listoChild(tickets.length);
-	    $('.lottery-selected-num span:' + childAccessor).text(content);
-        }
-        
-        console.log(tickets);
-    });
-
-    function validateTickets(tickets) {
-        return tickets.length === 5;
     }
 
     function changeInstaLink(ticketNo) {
