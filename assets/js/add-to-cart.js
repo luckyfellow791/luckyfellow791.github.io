@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
     var cartWrapper = $('.cd-cart-container');
     //product id - you don't need a counter in your real project but you can use your real product id
     var productId = 0;
+    var products = [];
 
     if( cartWrapper.length > 0 ) {
 	//store jQuery objects
@@ -78,6 +79,15 @@ jQuery(document).ready(function($){
     function addToCart(trigger) {
 	var cartIsEmpty = cartWrapper.hasClass('empty');
 	//update cart product list
+        if (products.length > 0) {
+            alert("Sorry, you can buy only one ticket at a time.");
+            return;
+        }
+        var validTicket = validateTickets(tickets);
+        if (validTicket === false) {
+            alert("You have to pick 5 numbers in the lottery.");
+            return;
+        }
 	addProduct();
 	//update number of items 
 	updateCartCount(cartIsEmpty);
@@ -136,14 +146,27 @@ jQuery(document).ready(function($){
         console.log(tickets);
     });
 
+    function validateTickets(tickets) {
+        return tickets.length === 5;
+    }
+
+    function changeInstaLink(ticketNo) {
+        var id = "instamojo";
+        var checkoutLink = document.getElementById(id);
+        checkoutLink.href = checkoutLink.href + "&data_Field_78960=" + ticketNo;
+    }
+
     function addProduct() {
 	//this is just a product placeholder
 	//you should insert an item with the selected product info
 	//replace productId, productName, price and url with your real product info
+
 	productId = productId + 1;
+        products.push(productId);
         var ticketName = getTicketName(tickets);
 	var productAdded = $('<li class="product"><div class="product-details"><h3><a href="#0">' + ticketName + '</a></h3><div class="actions"><a href="#0" class="delete-item">Delete</a></div><span class="priceDef"><span class="tit">Lottery Price</span> <span class="val">Rs.100.00</span> <span class="tit">Convenience charges</span> <span class="val">Rs.5.00</span></span><span class="price">Rs.105.00</span><div class="actions" style="display:none;"><div class="quantity"><label for="cd-product-'+ productId +'">Qty</label><span class="select"><select id="cd-product-'+ productId +'" name="quantity"><option value="1">1</option></select></span></div></div></div></li>');
 	cartList.prepend(productAdded);
+        changeInstaLink(ticketName);
     }
 
     function removeProduct(product) {
